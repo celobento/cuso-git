@@ -37,6 +37,9 @@
 
 # O continue deve ser utilizado após a resolução manual dos conflitos, enquanto que o skip faz com que suas alterações sejam descartadas e o abort volta atrás em todo o processo de rebase.
 
+# atualiza a branch desenvolvimento com a master
+	- git rebase master desenvolvimento
+
 *  pelo que entendi, usamos o MERGE quando queremos atualizar a MASTER com as alterações do BRANCH. Já o REBASE, é quando queremos atualizar o BRANCH com as atalizações do MASTER.
 
 # descartar todas as alterações que foram realizadas desde o último commit, isto é, voltar o seu sistema para o estado em que se encontra no HEAD
