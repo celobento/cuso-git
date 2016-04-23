@@ -91,3 +91,9 @@
 
 	  *** Se temos o nome de um arquivo igual ao nome de uma branch, ao realizar o comando git checkout passando este nome, o Git irá realizar a troca de branch. Para conseguirmos descartar as alterações do Working Directory, precisamos passar "--" para indicar que é o arquivo da branch atual, isto é, git checkout -- arquivo.
 
+# para automatizar uma sequencia de comandos, a passoa pode editar o arquivo gitconfig que fica na raiz do usuario
+	- git config --global alias.co checkout
+	- [alias]
+		co = checkout
+	** este comando abaixo faz uma seguencia de comandos . depois de configurar no arquivo, basta chamar o "git envia"
+	envia = !git checkout master && git pull origin master && git checkout desenvolvimento && git rebase master && git checkout master && git merge desenvolvimento && git push origin master
