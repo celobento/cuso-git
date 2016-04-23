@@ -1,0 +1,88 @@
+# verificar todas as atualizações que foram realizadas no repositório
+	
+	- git fetch origin
+		Realizando o comando "git fetch origin", podemos verificar todas as atualizações que foram realizadas no repositório referente ao origin
+
+# criar uma nova branch chamada design
+	- git branch design
+
+# listar todas as branches locais
+	- git branch
+
+# trocar de branch para a branch chamada design
+	- git checkout design
+
+# criação de uma nova branch seguida da troca para essa branch criada
+	- git checkout -b design
+
+# Deletando uma branch local
+	- git branch -d design
+
+# criamos a branch remota design no repositório referente ao origin e criamos uma ligação entre a nossa branch e a branch remota
+	-push -u origin design
+
+# listadas as branches remotas do nosso repositório
+	- git branch -r
+
+# listar tanto as branches locais quanto as remotas. 
+	- git branch -a
+
+# Copiando uma branch remota =  uma nova branch local chamada design é criada, muda-se para essa branch, copiamos todo o conteúdo da branch remota design do repositório referente ao origin e trackeamos as duas branches.
+	- git checkout -t origin/design
+
+# Deletando uma branch remota
+	- git checkout origin :design
+	Find a ref that matches experimental in the origin repository (e.g. refs/heads/experimental), and delete it.
+		Ao digitarmos o comando "git push origin :design" a branch remota design do repositório referente ao origin é deletada.
+
+# O continue deve ser utilizado após a resolução manual dos conflitos, enquanto que o skip faz com que suas alterações sejam descartadas e o abort volta atrás em todo o processo de rebase.
+
+# descartar todas as alterações que foram realizadas desde o último commit, isto é, voltar o seu sistema para o estado em que se encontra no HEAD
+	- git checkout proposta_1.html
+
+# Esse comando trará o arquivo "proposta_1.html" como ele se encontra na branch "master" e o adicionará ao Index do repositório na branch "desenvolvimento", pronto para um commit.
+	- git checkout master proposta_1.html
+
+# Descartando alterações no Index
+	- git reset HEAD proposta_1.html
+
+	** o RESET descarta as alterações que foram feitas e já estão no index, já o CHECKOUT descarta as alterações feitas que estão no Working Directory
+
+	***  O -- soft, não mexe no index  ou no working directory, mas redefine a cabeça para <commit>. Isso deixa todos os seus arquivos alterados.
+
+	*** Já o -- hard, reseta o index  e o  working directory. Quaisquer alterações nos arquivos rastreados na árvore de trabalho desde <commit> são descartados.
+
+	*** A diferença entre essas três opções se refere ao local onde as modificações serão enviadas: com o git reset, as alterações serão enviadas para o Working Directory; com o git reset --soft, para o Index. Já para o git reset --hard, as alterações serão removidas permanentemente.
+
+# coloca o Working Directory e index em uma área reservad, para poder tratar de alguma inconsistencia no index ou no repositorio; guardar as alterações que estão no Working Directory e Index e retornar ao estado do último commit
+	- git stash
+# lista os stash guardados
+	- git stash list
+# recuperar as alterações que foram salvas anteriormente; recuperar o último estado salvo com o comando git stash	
+	- git stash pop
+# recuperar um stash especifico
+	- git stash pop stash@{1}
+# Ao realizarmos o comando git stash apply, o último estado salvo será recuperado, mas não será deletado da lista de stashs.
+	- git stash apply
+# Ao realizarmos o comando git stash drop, o último estado salvo será deletado. Também podemos utilizar o nome dos stashs para deletar algum estado que não seja o último. Por fim, se quisermos deletar todos os estados, podemos utilizar o comando git stash clear
+	- git stash drop
+	- git stash clear
+
+	*** Descartando commits indesejados
+
+# o commit do seguinte hash EM DIANTE será descartado
+	- git reset b6c7cc8e3fea9b255b5845e1114588206679f609
+	- git reset HEAD~1  // esta opção HEAD~1, fonnece um atalho para o penultimo commit, já o HEAD~2 para o antepenultimo commmit
+	- Ao realizarmos o comando git reset --hard HEAD~1, as alterações no último commit serão descartadas.
+
+	*** Desfazendo commits antigos
+
+#  remover commits que foram realizados há algum tempo, apenas desfazendo as alterações daqueles commits
+	- git revert -n [hash_do_commit]
+	  * -n = as alterações sejam revertidas e adicionadas ao nosso Working Directory e Index
+
+
+	  *** Como vimos, o comando git checkout serve tanto para trocar de branch quanto descartar alterações de um arquivo do "Working Directory"
+
+	  *** Se temos o nome de um arquivo igual ao nome de uma branch, ao realizar o comando git checkout passando este nome, o Git irá realizar a troca de branch. Para conseguirmos descartar as alterações do Working Directory, precisamos passar "--" para indicar que é o arquivo da branch atual, isto é, git checkout -- arquivo.
+
