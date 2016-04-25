@@ -97,3 +97,12 @@
 		co = checkout
 	** este comando abaixo faz uma seguencia de comandos . depois de configurar no arquivo, basta chamar o "git envia"
 	envia = !git checkout master && git pull origin master && git checkout desenvolvimento && git rebase master && git checkout master && git merge desenvolvimento && git push origin master
+
+# quando tenho varios commits e quero colocar no master apenas um dos commits. Vai pra branch master primeiro e depois executa o comando baixo
+	- git cherry-pick 4cRrt56
+	* 4cRrt56 é o hash do commit que eu quero pegar
+
+# Ao executar o cherry-pick, um novo commit é gerado. Contudo, tem uma opção que permite não gerar um novo commit
+	- git cherry-pick -n
+
+	** Devemos usar cherry-pick quando queremos levar apenas alguns commits para outras branches. Mas cuidado, seu uso é complicado e deve ser evitado sempre que possível.
