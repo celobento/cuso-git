@@ -1,3 +1,16 @@
+#lista as configrações globais do git
+    - git config --list
+
+# inforamando quem eh vc para os seus commits
+    - git config --global user.name "John Doe"
+    - git config --global user.email johndoe@example.com
+    
+#apontar repositorio local para um remoto
+    - git remote add ruby1 https://bitbucket.org/celobento26/alurarubyi
+ 
+# mandar um branch local para o repositorio (eh um push normal para branch)
+    - git push instituto desenvolvimento
+
 # verificar todas as atualizações que foram realizadas no repositório
 	
 	- git fetch origin
