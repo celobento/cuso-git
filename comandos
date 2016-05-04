@@ -119,3 +119,10 @@
 	- git cherry-pick -n
 
 	** Devemos usar cherry-pick quando queremos levar apenas alguns commits para outras branches. Mas cuidado, seu uso é complicado e deve ser evitado sempre que possível.
+	
+
+# mostra repositorios remotos
+	- git remote -v
+
+# altera nome/alias remoto de 'origin' para 'destination'
+	- git remote rename origin destination
