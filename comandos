@@ -8,6 +8,12 @@
 #apontar repositorio local para um remoto
     - git remote add ruby1 https://bitbucket.org/celobento26/alurarubyi
  
+# gerar uma tag
+	- git tag 1.0.0 1b2e1d63ff (1b2e1d63ff é os 10 primeiros caracteres do id de commit que você quer referenciar)
+	
+# enviar uma tag para o repositorio remotos
+	- git push instituto master --tags
+
 # mandar um branch local para o repositorio (eh um push normal para branch)
     - git push instituto desenvolvimento
 
