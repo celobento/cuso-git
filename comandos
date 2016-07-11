@@ -12,7 +12,8 @@
 	- git tag 1.0.0 1b2e1d63ff (1b2e1d63ff é os 10 primeiros caracteres do id de commit que você quer referenciar)
 
 # para atualizar seu repositório local com a mais nova versão, execute
-	- megit pull
+	- git pull
+	- git pull releasenotes master
 
 # enviar uma tag para o repositorio remotos
 	- git push instituto master --tags
