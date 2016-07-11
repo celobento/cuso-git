@@ -10,7 +10,10 @@
  
 # gerar uma tag
 	- git tag 1.0.0 1b2e1d63ff (1b2e1d63ff é os 10 primeiros caracteres do id de commit que você quer referenciar)
-	
+
+# para atualizar seu repositório local com a mais nova versão, execute
+	- megit pull
+
 # enviar uma tag para o repositorio remotos
 	- git push instituto master --tags
 
@@ -56,6 +59,9 @@
 
 # O continue deve ser utilizado após a resolução manual dos conflitos, enquanto que o skip faz com que suas alterações sejam descartadas e o abort volta atrás em todo o processo de rebase.
 
+# para fazer merge de um outro branch ao seu branch ativo (ex. master), use
+	- git merge <branch>
+	
 # atualiza a branch desenvolvimento com a master
 	- git rebase master desenvolvimento
 
